@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tải Chi Đội App</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+        body { background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%); min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; }
+        .container { background: white; border-radius: 24px; padding: 35px 25px; width: 100%; max-width: 380px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12); text-align: center; }
+        .app-icon { width: 96px; height: 96px; border-radius: 22px; margin-bottom: 16px; box-shadow: 0 8px 16px rgba(0,0,0,0.15); object-fit: cover; }
+        h1 { font-size: 24px; color: #1e293b; font-weight: 700; margin-bottom: 6px; }
+        .subtitle { font-size: 14px; color: #64748b; margin-bottom: 24px; }
+        .btn-download { display: flex; align-items: center; justify-content: center; gap: 10px; background: #2563eb; color: white; text-decoration: none; padding: 16px; border-radius: 16px; font-weight: 600; font-size: 16px; box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35); transition: all 0.2s ease; }
+        .btn-download:active { transform: scale(0.98); }
+        .info-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 16px; margin-top: 24px; text-align: left; }
+        .info-title { font-size: 14px; font-weight: 600; color: #334155; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+        .steps { padding-left: 20px; font-size: 13px; color: #475569; line-height: 1.6; }
+        .steps li { margin-bottom: 6px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="https://cdn-icons-png.flaticon.com/512/2583/2583344.png" alt="App Icon" class="app-icon">
+    <h1>Chi Đội App</h1>
+    <p class="subtitle">Ứng dụng Android chính thức • Phiên bản mới nhất</p>
+
+    <!-- Đường link tải file APK trực tiếp từ build GitHub -->
+    <a href="https://github.com/anhsung986/chidoi/releases/latest/download/ChidoiApp.apk" class="btn-download">
+        <span>📥</span> Tải APK Trực Tiếp
+    </a>
+
+    <div class="info-box">
+        <div class="info-title">📌 Hướng dẫn cài nhanh:</div>
+        <ol class="steps">
+            <li>Bấm nút <b>Tải APK Trực Tiếp</b> ở trên.</li>
+            <li>Mở file <b>ChidoiApp.apk</b> vừa tải về.</li>
+            <li>Nếu bị chặn: Chọn <b>Cho phép từ nguồn này</b> hoặc tạm tắt <b>Play Protect</b> trong CH Play.</li>
+            <li>Nhấn <b>Cài đặt</b> để hoàn tất.</li>
+        </ol>
+    </div>
+</div>
+
+</body>
+</html>
