@@ -17,6 +17,12 @@
         .info-title { font-size: 14px; font-weight: 600; color: #334155; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
         .steps { padding-left: 20px; font-size: 13px; color: #475569; line-height: 1.6; }
         .steps li { margin-bottom: 6px; }
+
+        /* Bổ sung style cho mục hướng dẫn tắt Play Protect */
+        details { margin-top: 12px; background: #ffffff; border: 1px dashed #cbd5e1; border-radius: 12px; padding: 10px 12px; }
+        summary { font-size: 12px; font-weight: 600; color: #dc2626; cursor: pointer; outline: none; }
+        .protect-steps { margin-top: 8px; padding-left: 18px; font-size: 12px; color: #475569; line-height: 1.5; }
+        .protect-steps li { margin-bottom: 4px; }
     </style>
 </head>
 <body>
@@ -39,6 +45,18 @@
             <li>Nếu bị chặn: Chọn <b>Cho phép từ nguồn này</b> hoặc tạm tắt <b>Play Protect</b> trong CH Play.</li>
             <li>Nhấn <b>Cài đặt</b> để hoàn tất.</li>
         </ol>
+
+        <!-- Thêm khối xem chi tiết cách tắt Play Protect -->
+        <details>
+            <summary>🛡️ Xem cách tắt Play Protect (nếu bị chặn)</summary>
+            <ol class="protect-steps">
+                <li>Mở <b>CH Play</b> ➔ Bấm vào <b>Avatar tài khoản</b> góc trên bên phải.</li>
+                <li>Chọn <b>Play Protect</b>.</li>
+                <li>Bấm vào <b>Cài đặt ⚙️</b> ở góc trên bên phải.</li>
+                <li>Gạt công tắc tại <b>Quét ứng dụng bằng Play Protect</b> để tắt.</li>
+                <li>Bấm <b>Tắt</b> (hoặc Tạm dừng) để xác nhận.</li>
+            </ol>
+        </details>
     </div>
 </div>
 
