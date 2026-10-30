@@ -29,10 +29,10 @@
 <div class="container">
     <img src="https://cdn-icons-png.flaticon.com/512/2583/2583344.png" alt="App Icon" class="app-icon">
     <h1>Chi Đội App</h1>
-    <!-- Thêm id="versionText" để thay đổi động số phiên bản -->
+    <!-- Hiển thị động số phiên bản -->
     <p class="subtitle" id="versionText">Ứng dụng Android chính thức • Đang tải phiên bản...</p>
 
-    <!-- Đã sửa đúng tên file thành Chidoi.apk -->
+    <!-- Nải APK trực tiếp từ bản Release của repo -->
     <a href="https://github.com/anhsung986/chidoi/releases/latest/download/Chidoi.apk" class="btn-download">
         <span>📥</span> Tải APK Trực Tiếp
     </a>
@@ -60,24 +60,28 @@
 </div>
 
 <script>
-    // Hàm tự động đọc version từ file version.json trên GitHub Pages/Repository của bạn
     async function fetchAppVersion() {
+        const versionEl = document.getElementById('versionText');
+        
+        // Gọi trực tiếp từ file RAW trên GitHub để lấy số version chính xác
+        const jsonUrl = 'https://raw.githubusercontent.com/anhsung986/chidoi/main/version.json?t=' + new Date().getTime();
+
         try {
-            // Thêm tham số thời gian (?t=...) để tránh tình trạng trình duyệt lưu cache cũ
-            const response = await fetch('version.json?t=' + new Date().getTime());
+            const response = await fetch(jsonUrl);
             if (response.ok) {
                 const data = await response.json();
-                if (data.version) {
-                    document.getElementById('versionText').innerHTML = `Ứng dụng Android chính thức • Phiên bản v${data.version}`;
+                if (data && data.version) {
+                    versionEl.innerHTML = `Ứng dụng Android chính thức • Phiên bản v${data.version}`;
+                    return;
                 }
             }
+            throw new Error("Không đọc được dữ liệu phiên bản");
         } catch (error) {
-            console.error("Không thể tải thông tin phiên bản:", error);
-            document.getElementById('versionText').innerHTML = "Ứng dụng Android chính thức • Phiên bản mới nhất";
+            console.error("Lỗi tải version:", error);
+            versionEl.innerHTML = `Ứng dụng Android chính thức • Phiên bản mới nhất`;
         }
     }
 
-    // Chạy hàm lấy version ngay khi trang vừa tải xong
     window.addEventListener('DOMContentLoaded', fetchAppVersion);
 </script>
 
